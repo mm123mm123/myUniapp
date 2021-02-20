@@ -1,49 +1,43 @@
 <template>
-	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view>
-			<text class="title">{{title}}</text>
-		</view>
-	</view>
+  <view class="content">
+    <view class="title">
+      世纪大千
+    </view>
+    <view class="user-msg-box">
+      <view class="li">
+        <span class="user-name">li</span>
+        <span class="phone-number">7087111</span>
+        <view class="arrow"></view>
+      </view>
+      <view class="li">
+        <span>区域</span>
+        <span class="area"></span>
+      </view>
+      <view class="calendar">
+        <view class="calendar-pic">
+          <image src="/../static/calendar@2x.png"></image>
+        </view>
+        <span>我的日程表</span>
+      </view>
+    </view>
+
+  </view>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				title: 'Hello'
-			}
-		},
-		onLoad() {
+export default {
+  data() {
+    return {
+      title: 'Hello'
+    }
+  },
+  onLoad() {
 
-		},
-		methods: {
-
-		}
-	}
+  },
+  methods: {}
+}
 </script>
 
-<style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
+<style lang="scss" scoped>
 
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin: 200rpx auto 50rpx auto;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
 </style>
