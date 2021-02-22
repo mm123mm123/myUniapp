@@ -5,17 +5,17 @@
     </view>
     <view class="user-msg-box">
       <ul class="ul">
-        <li>
+        <li  @click="nextPage('/pages/mine/index')">
           <span class="user-name first-item">li</span>
           <span class="phone-number">7087111</span>
-          <view class="arrow" @click="nextPage('/pages/mine')"></view>
+          <view class="arrow"></view>
         </li>
         <li class="li">
           <span class="area first-item">区域</span>
           <span class="area-name">朝阳</span>
         </li>
       </ul>
-      <view class="calendar">
+      <view class="calendar" @click="nextPage('/pages/calendar/index')">
         <view class="calendar-pic">
           <image src="/../static/calendar@2x.png"></image>
         </view>
@@ -53,7 +53,6 @@ export default {
   },
   methods: {
     nextPage(path){
-      console.log(path);
       uni.navigateTo({
         url:path
       })

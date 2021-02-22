@@ -12,10 +12,23 @@
       "path": "pages/index/index"
     },
     {
-      "path": "pages/mine",
+      "path": "pages/mine/index",
       "style": {
         "navigationStyle": "default",
         "navigationBarTitleText": "个人中心",
+        "app-plus": {
+          "titleNView": {
+            "titleSize": "18px",
+            "backgroundColor": "#1dad66"
+          }
+        }
+      }
+    },
+    {
+      "path": "pages/calendar/index",
+      "style": {
+        "navigationStyle": "default",
+        "navigationBarTitleText": "日程表",
         "app-plus": {
           "titleNView": {
             "titleSize": "18px",

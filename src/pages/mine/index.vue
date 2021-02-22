@@ -35,7 +35,7 @@ export default {}
 }
 
 .bcg-pic {
-  background: url("../static/header_bg@2x.png") top center no-repeat;
+  background: url("../../static/header_bg@2x.png") top center no-repeat;
   background-size: 100%;
   padding-top: 20px;
 }
