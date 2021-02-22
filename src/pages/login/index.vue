@@ -30,7 +30,9 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-
+.page-container{
+  background-color: #0ab368;
+}
 .form {
   display: flex;
   align-items: center;

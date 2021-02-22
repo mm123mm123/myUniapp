@@ -14,11 +14,11 @@ export default {
 
 <style lang="scss">
 @import "~@/style/reset.scss";
+@import "~@/style/helper.scss";
 
 .page-container {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-color: #0ab368;
 }
 </style>
