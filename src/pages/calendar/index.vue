@@ -1,13 +1,13 @@
 <template>
   <view>
     <view class="calendar">
-      <Calendar></Calendar>
+      <Calendar :show-month=false></Calendar>
     </view>
-    <view class="content-wrapper">
-      <view class="slide-button">
+    <view class="content-wrapper" :class='{toggle: isClicked}'>
+      <view class="slide-button" @click='isClicked=!isClicked'>
         <image :src="picPath" class="downArrow"></image>
         <span>
-          {{ btnText }}
+          {{ isClicked === true ? '收起' : '展开' }}
         </span>
       </view>
       <view class="content">
@@ -35,23 +35,47 @@ export default {
       cardList: [
         {enterpriseName: '黑狼口', status: '已驳回', category: '医疗卫生机构'},
         {enterpriseName: '王麻子村', status: '已驳回', category: '村庄'}
-      ]
+      ],
+      isClicked: false
     }
-  }
+  },
+  methods: {}
 }
 </script>
 <style lang="scss" scoped>
+.page-container {
+  background-color: #fafafa;
+  border:1px solid red;
+  overflow-y: auto;
+}
 .content-wrapper {
-  border: 1px solid blue;
+  border: 1px solid red;
+  position: absolute;
+  width: 100%;
+  top: 30%;
+  transition: top 0.5s;
+  background-color: #fafafa;
+
+  &.toggle {
+    top: 58%;
+
+    .downArrow {
+      transform: rotate(180deg);
+    }
+  }
 
   .slide-button {
-    border: 1px solid red;
-    text-align: center;
+    background-color: #ffffff;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     .downArrow {
       width: 15px;
       height: 15px;
     }
   }
+
 }
 </style>

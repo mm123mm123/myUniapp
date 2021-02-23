@@ -25,8 +25,11 @@ export default {
 <style lang="scss" scoped>
 .card-wrapper {
   font-size: 16px;
-  border: 1px solid red;
   padding: 15px 15px 10px 15px;
+  background-color: #ffffff;
+  margin: 16px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px 0 rgba(211, 211, 211, 0.21);
 
   .head {
     display: flex;
