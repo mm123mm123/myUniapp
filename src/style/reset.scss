@@ -3,12 +3,15 @@
   margin: 0;
   box-sizing: border-box;
 }
-*::before{
-  box-sizing:border-box;
-}
-*::after{
+
+*::before {
   box-sizing: border-box;
 }
+
+*::after {
+  box-sizing: border-box;
+}
+
 a {
   text-decoration: none;
   color: inherit
@@ -18,9 +21,16 @@ ul, ol {
   list-style: none;
 }
 
-button.input {
+button {
   font: inherit;
+  margin: 0;
+  padding: 0;
+  border:none;
 }
-h1,h2,h3,h4,h5{
-  font-weight:normal;
+button::after{
+  border:none;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: normal;
 }
