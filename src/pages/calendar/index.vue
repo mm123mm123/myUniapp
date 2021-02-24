@@ -1,5 +1,5 @@
 <template>
-  <view>
+  <view class="wrapper">
     <view class="calendar">
       <Calendar :show-month=false></Calendar>
     </view>
@@ -43,13 +43,10 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.page-container {
-  background-color: #fafafa;
-  border:1px solid red;
-  overflow-y: auto;
+.wrapper{
+  display: flex;
 }
 .content-wrapper {
-  border: 1px solid red;
   position: absolute;
   width: 100%;
   top: 30%;

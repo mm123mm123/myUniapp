@@ -2,11 +2,12 @@
   <view class="page-container">
     <view class="userNameForm form">
       <image src="../../static/account@2x.png"></image>
-      <input class="uni-input" name="input" placeholder="登录账号"/>
+      <input class="uni-input" name="input"
+             placeholder="登录账号" v-model="userForm.username"/>
     </view>
     <view class="passwordForm form">
       <image src="../../static/password@2x.png"></image>
-      <input class="uni-input" name="input" placeholder="登录密码"/>
+      <input class="uni-input" name="input" placeholder="登录密码" v-model="userForm.password"/>
     </view>
     <view class="button-wrapper">
       <button class="login-button" type="default" @click="login()">
@@ -20,19 +21,48 @@
 </template>
 <script>
 export default {
-  methods:{
-    login(){
-      uni.navigateTo({
-        url:'/pages/index/index'
-      })
+  data() {
+    return {
+      userForm: {
+        username: 'ls',
+        password: 'ls1234'
+      }
+    }
+  },
+  methods: {
+    login() {
+      if (!this.userForm.username) {
+        uni.showToast({
+          title: '请输入用户名',
+          icon: 'none'
+        })
+      } else if (!this.userForm.password) {
+        uni.showToast({
+          title: '请输入密码',
+          icon: 'none'
+        })
+      } else {
+        this.$api.post('auth/appLogin', this.userForm).then(
+            () => {
+              uni.navigateTo({
+                url: '/pages/index/index'
+              })
+            }, () => {
+              this.userForm = {
+                username: '',
+                password: ''
+              }
+            })
+      }
     }
   }
 }
 </script>
 <style lang="scss" scoped>
-.page-container{
+.page-container {
   background-color: #0ab368;
 }
+
 .form {
   display: flex;
   align-items: center;
@@ -83,12 +113,17 @@ uni-image {
   }
 }
 
-.login-button {
-  background-color: #0ba660;
-  font-size: 15px;
-  width: 70px;
-  height: 35px;
-  line-height: 35px;
+.button-wrapper {
+  .login-button {
+    color: #a9beb4;
+    background-color: #0ba660;
+    font-size: 15px;
+    width: 70px;
+    height: 35px;
+    line-height: 35px;
+    margin: auto;
+  }
 }
+
 
 </style>

@@ -21,7 +21,9 @@
           </li>
         </ol>
       </view>
-      <button>退出登录</button>
+      <view class="btn-wrapper">
+        <button>退出登录</button>
+      </view>
     </view>
   </view>
 
@@ -55,18 +57,19 @@ export default {}
   }
 }
 
-
-button {
+.btn-wrapper {
   position: absolute;
-  font-size: 16px;
-  width: 300px;
-  left: 0;
-  right: 0;
   bottom: 100px;
-  border-radius: 78px;
-  background-color: #15bb72;
-  color: #ffffff;
+  width:100%;
+  button {
+    font-size: 16px;
+    width: 260px;
+    margin:0 auto;
+    padding: 10px 0;
+    border-radius: 78px;
+    background-color: #15bb72;
+    color: #ffffff;
+  }
 }
-
 
 </style>
